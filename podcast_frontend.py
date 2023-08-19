@@ -41,16 +41,12 @@ def main():
         col3, col4 = st.columns([3, 7])
 
         with col3:
-    st.subheader("Podcast Guest")
-    try:
-        st.write(podcast_info['podcast_guest']['name'])
-    except KeyError:
-        st.write("Guest name not available.")
-
+            st.subheader("Podcast Guest")
+            st.write(podcast_info['podcast_guest']['name'])
 
         with col4:
             st.subheader("Podcast Guest Details")
-            st.write(podcast_info['podcast_guest']['summary'])
+            st.write(podcast_info["podcast_guest"]['summary'])
 
         # Display the five key moments
         st.subheader("Key Moments")
