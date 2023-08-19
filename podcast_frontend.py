@@ -32,7 +32,7 @@ def main():
         with col1:
             # Display the podcast episode summary
             st.subheader("Podcast Episode Summary")
-            st.write(podcast_info)
+            st.write(podcast_info['podcast_summary'])
 
         with col2:
             st.image(podcast_info['podcast_details']['episode_image'], caption="Podcast Cover", width=300, use_column_width=True)
@@ -42,7 +42,7 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest'])
+            st.write(podcast_info['podcast_summary']['GUEST NAME'])
 
         with col4:
             st.subheader("Podcast Guest Details")
