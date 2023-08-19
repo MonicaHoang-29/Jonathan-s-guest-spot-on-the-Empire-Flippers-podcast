@@ -41,8 +41,12 @@ def main():
         col3, col4 = st.columns([3, 7])
 
         with col3:
-            st.subheader("Podcast Guest")
-            st.write(podcast_info['guest_name'])
+    st.subheader("Podcast Guest")
+    try:
+        st.write(podcast_info['podcast_guest']['name'])
+    except KeyError:
+        st.write("Guest name not available.")
+
 
         with col4:
             st.subheader("Podcast Guest Details")
