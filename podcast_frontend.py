@@ -15,13 +15,15 @@ def main():
     st.sidebar.subheader("Available Podcasts Feeds")
     selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
 
-    #Extracting name
-    end_idx_final = podcast_info["podcast_summary"].find("\n", start_idx_corrected_v2)
-    guest_name_final = podcast_info["podcast_summary"][start_idx_corrected_v2:end_idx_final].strip()
+   
 
     if selected_podcast:
 
         podcast_info = available_podcast_info[selected_podcast]
+
+        #Extracting name
+        end_idx_final = podcast_info["podcast_summary"].find("\n", start_idx_corrected_v2)
+        guest_name_final = podcast_info["podcast_summary"][start_idx_corrected_v2:end_idx_final].strip()
 
         # Right section - Newsletter content
         st.header("Newsletter Content")
