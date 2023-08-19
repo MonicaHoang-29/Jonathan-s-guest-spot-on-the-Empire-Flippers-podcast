@@ -16,8 +16,8 @@ def main():
     selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
 
     #Extracting name
-    end_idx_final = data_corrected_v2["podcast_summary"].find("\n", start_idx_corrected_v2)
-    guest_name_final = data_corrected_v2["podcast_summary"][start_idx_corrected_v2:end_idx_final].strip()
+    end_idx_final = podcast_info["podcast_summary"].find("\n", start_idx_corrected_v2)
+    guest_name_final = podcast_info["podcast_summary"][start_idx_corrected_v2:end_idx_final].strip()
 
     if selected_podcast:
 
