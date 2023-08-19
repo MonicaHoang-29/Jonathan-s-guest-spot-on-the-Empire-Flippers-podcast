@@ -21,10 +21,6 @@ def main():
 
         podcast_info = available_podcast_info[selected_podcast]
 
-        #Extracting name
-        end_idx_final = podcast_info["podcast_summary"].find("\n", start_idx_corrected_v2)
-        guest_name_final = podcast_info["podcast_summary"][start_idx_corrected_v2:end_idx_final].strip()
-
         # Right section - Newsletter content
         st.header("Newsletter Content")
 
@@ -48,7 +44,7 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(guest_name_final)
+            st.write(podcast_info['podcast_guest']['name'])
 
         with col4:
             st.subheader("Podcast Guest Details")
