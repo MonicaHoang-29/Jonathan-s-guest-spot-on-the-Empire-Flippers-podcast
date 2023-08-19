@@ -15,6 +15,10 @@ def main():
     st.sidebar.subheader("Available Podcasts Feeds")
     selected_podcast = st.sidebar.selectbox("Select Podcast", options=available_podcast_info.keys())
 
+    #Extracting name
+    end_idx_final = data_corrected_v2["podcast_summary"].find("\n", start_idx_corrected_v2)
+    guest_name_final = data_corrected_v2["podcast_summary"][start_idx_corrected_v2:end_idx_final].strip()
+
     if selected_podcast:
 
         podcast_info = available_podcast_info[selected_podcast]
@@ -42,7 +46,7 @@ def main():
 
         with col3:
             st.subheader("Podcast Guest")
-            st.write(podcast_info['podcast_guest']['name'])
+            st.write(guest_name_final)
 
         with col4:
             st.subheader("Podcast Guest Details")
